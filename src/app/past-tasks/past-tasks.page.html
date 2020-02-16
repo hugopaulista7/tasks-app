@@ -3,38 +3,17 @@
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>TODO List</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
+
   <ion-list>
-    <ion-list-header sticky class="ion-no-padding">
-      <ion-card class="ion-no-margin">
-        <form [formGroup]="newTask">
-          <ion-item lines="none">
-            <ion-label position="floating">
-              Adicionar tarefa
-            </ion-label>
-            <ion-input type=text placeholder="Nome da tarefa" formControlName="name"></ion-input>
-          </ion-item>
-
-          <ion-item lines="none">
-            <ion-textarea max=255 placeholder="Descrição da tarefa" formControlName="description"></ion-textarea>
-          </ion-item>
-        </form>
-
-        <ion-button fill="clear" expand="block" (click)="addTask()">
-          Adicionar
-        </ion-button>
-      </ion-card>
-
-    </ion-list-header>
-
     <ion-card *ngFor="let task of tasks" [class.task-done]="task.status.name === 'Concluído'">
       <ion-card-header>
         <ion-card-subtitle  color="primary">
-          {{task.name}}
+          {{task?.name}}
         </ion-card-subtitle>
       </ion-card-header>
       <ion-card-content class="ion-no-padding">
@@ -49,4 +28,6 @@
       </ion-card-content>
     </ion-card>
   </ion-list>
+
+
 </ion-content>

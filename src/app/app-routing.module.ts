@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'archived-tasks',
     loadChildren: './archived-tasks/archived-tasks.module#ArchivedTasksPageModule'
+  },  {
+    path: 'past-tasks',
+    loadChildren: () => import('./past-tasks/past-tasks.module').then( m => m.PastTasksPageModule)
   }
+
 ];
 
 @NgModule({

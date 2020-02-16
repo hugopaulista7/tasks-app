@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ApiService } from './services/api/api.service';
 import { LoginService } from './services/user/login.service';
+import { Router, RouterEvent } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,39 @@ import { LoginService } from './services/user/login.service';
 })
 export class AppComponent {
 
+  public appPages = [
+    {
+      name: 'Tarefas do dia',
+      route: '/tasks',
+      icon: 'today'
+    },
+    {
+      name: 'Tarefas arquivadas',
+      route: '/archived-tasks',
+      icon: 'archive'
+    },
+    {
+      name: 'Tarefas passadas',
+      route: '/past-tasks',
+      icon: 'time'
+    }
+  ];
+
+  public selectedPath = '';
+
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private login: LoginService
+    private login: LoginService,
+    private router: Router
   ) {
+    this.router.events.subscribe((event: RouterEvent) => {
+      if (event && event.url) {
+        this.selectedPath = event.url;
+      }
+    });
     this.initializeApp();
   }
 

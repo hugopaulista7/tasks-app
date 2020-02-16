@@ -16,11 +16,11 @@ export class TasksPage implements OnInit {
   newTask: FormGroup;
 
   constructor(
-    private api: ApiService,
-    private message: MessageService,
-    private formBuilder: FormBuilder,
-    private popover: PopoverService,
-    private router: Router
+    protected api: ApiService,
+    protected message: MessageService,
+    protected formBuilder: FormBuilder,
+    protected popover: PopoverService,
+    protected router: Router
   ) { }
 
   ngOnInit() {

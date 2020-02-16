@@ -1,0 +1,30 @@
+ion-list {
+  --background: transparent;
+  background: transparent;
+}
+
+ion-card {
+  border-radius: 0;
+  
+  ion-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    ion-card-subtitle {
+      padding: 0 5px;
+    }
+    ion-button {
+      ion-icon {
+        font-size: 15px;
+      }
+    }
+  }
+  .toolbar-no-padding {
+    padding: 0;
+  }
+}
+
+
+.task-done {
+  text-decoration: line-through;
+}

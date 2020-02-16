@@ -8,11 +8,14 @@
       </ion-header>
       <ion-content>
         <ion-list>
-          <ion-menu-toggle>
-            <ion-item routerDirection="root" lines="none" href="/tasks">Tarefas do dia</ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle>
-            <ion-item routerDirection="root" lines="none" href="/archived-tasks">Tarefas Arquivadas</ion-item>
+          <ion-menu-toggle *ngFor="let item of appPages">
+            <ion-item routerDirection="root" lines="none" [routerLink]="item.route" [class.active-item]="selectedPath.startsWith(item.route)">
+              <ion-icon slot="start" [name]="item.icon"></ion-icon>
+              <ion-label slot="start">
+                {{item.name}}
+              </ion-label>
+
+            </ion-item>
           </ion-menu-toggle>
         </ion-list>
       </ion-content>

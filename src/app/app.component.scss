@@ -3,3 +3,20 @@ ion-menu ion-header {
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
+
+
+ion-item {
+  ion-icon {
+    font-size: 15px;
+  color: var(--ion-color-medium);
+  }
+  ion-label {
+    width: 100%;
+    overflow: unset;
+    --color: var(--ion-color-medium);
+  }
+}
+
+.active-item {
+  border-left: 5px solid var(--ion-color-primary);
+}
