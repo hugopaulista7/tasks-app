@@ -9,13 +9,26 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Interceptor } from './auth/interceptor.module';
+import { IonicStorageModule } from '@ionic/storage';
+import { TaskOptionsComponent } from './components/task.options/task.options.component';
+
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [
+    AppComponent,
+    TaskOptionsComponent
+  ],
+  entryComponents: [
+    TaskOptionsComponent
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    Interceptor,
+    IonicStorageModule.forRoot()
   ],
   providers: [
     StatusBar,

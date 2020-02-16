@@ -1,0 +1,10 @@
+<ion-list>
+  <ion-item *ngFor="let option of options" lines=none>
+    <ion-button fill="clear" (click)="option.handler(task)">
+      <ion-icon [name]="option.icon"></ion-icon>
+      <ion-label class="ion-margin-horizontal">
+        {{option.name}}
+      </ion-label>
+    </ion-button>
+  </ion-item>
+</ion-list>

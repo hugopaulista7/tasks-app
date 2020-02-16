@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { TaskViewPageRoutingModule } from './task-view-routing.module';
 
-import { FolderPage } from './folder.page';
+import { TaskViewPage } from './task-view.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    TaskViewPageRoutingModule
   ],
-  declarations: [FolderPage]
+  declarations: [TaskViewPage]
 })
-export class FolderPageModule {}
+export class TaskViewPageModule {}

@@ -1,0 +1,44 @@
+ion-list {
+  --background: transparent;
+  background: transparent;
+}
+ion-card {
+  border-radius: 0;
+}
+ion-card ion-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+ion-card ion-toolbar ion-card-subtitle {
+  padding: 0 5px;
+}
+ion-card ion-toolbar ion-button ion-icon {
+  font-size: 15px;
+}
+ion-list-header ion-card {
+  width: 100%;
+  --background: var(--task-color);
+  border: 1px dashed var(--task-border-color);
+  margin: 10px;
+}
+ion-list-header ion-card ion-label {
+  font-size: 13px;
+  color: #5b5b5b;
+}
+ion-list-header ion-card ion-item {
+  --background: transparent;
+}
+ion-list-header ion-card ion-button {
+  --color: var(--ion-color-danger-shade);
+}
+ion-list-header ion-card ion-input,
+ion-list-header ion-card ion-textarea {
+  --color: #5c5c5c;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "TravelingTypewriter";
+}
+.archived {
+  text-decoration: overline;
+}

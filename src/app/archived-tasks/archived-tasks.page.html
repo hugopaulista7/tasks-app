@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tarefas arquivadas</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="medium">
+        Tarefas arquivadas
+      </ion-label>
+    </ion-list-header>
+
+    <ion-card *ngFor="let task of tasks" class="archived">
+      <ion-card-header>
+        <ion-card-subtitle color="medium" >
+          {{task.name}}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{task.description}}
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
