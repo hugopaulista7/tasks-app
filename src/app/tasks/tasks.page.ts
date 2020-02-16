@@ -46,19 +46,18 @@ export class TasksPage implements OnInit {
       updated_at: `${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
     };
 
-    this.tasks.push(taskObj);
-
     this.sendTask(taskObj);
   }
 
   sendTask(taskObj) {
-    this.api.post('tasks/create', taskObj).subscribe(({success}) => {
+    this.api.post('tasks/create', taskObj).subscribe(({success, task}) => {
       if (!success) {
         this.message.presentToast('Ocorreu um erro ao criar sua tarefa');
         return ;
       }
 
       this.message.presentToast('Tarefa criada com sucesso', 'success', ['OK']);
+      this.tasks.push(task);
       this.newTask.reset();
     });
   }

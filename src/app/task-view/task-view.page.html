@@ -5,8 +5,9 @@
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-back-button text="" slot="start">
-    </ion-back-button>
+    <ion-button (click)="goBack()" fill="clear" color="primary">
+      <ion-icon src="../../assets/icon/left.svg" slot="icon-only" color="primary"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 <ion-content>

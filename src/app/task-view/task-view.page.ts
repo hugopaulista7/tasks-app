@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../services/api/api.service';
 import { TaskInterface } from '../services/utils/task.interface';
 import { MessageService } from '../services/utils/message.service';
@@ -23,8 +23,9 @@ export class TaskViewPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private api: ApiService,
-    private message: MessageService
-    ) { }
+    private message: MessageService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -54,6 +55,10 @@ export class TaskViewPage implements OnInit {
 
   public toggleEdit() {
     this.editing = !this.editing;
+  }
+
+  public goBack() {
+    this.router.navigate(['tasks']);
   }
 
 

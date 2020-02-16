@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://192.168.50.135:8000/api/v1/',
-  apiToken: '0eOgC4CKX9zlrePvqyDa25DTvPMr7sb261p539CqnZhBGsKbYwFCr5K0zNdx'
+  apiToken: 'SnMmkmd1kLs9k73Nw9KyXVSuh6OS8CSico50qdfQ6iL6BP4jfop840d0VZ88'
 };
 
 /*
