@@ -25,7 +25,9 @@ export class TasksPage implements OnInit {
 
   ngOnInit() {
     this.newTask = this.formBuilder.group(TaskValidator.rules());
-    this.getTasks();
+    setTimeout(() => {
+      this.getTasks();
+    }, 1500);
   }
 
   public getTasks() {

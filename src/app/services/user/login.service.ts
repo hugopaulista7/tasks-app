@@ -24,7 +24,7 @@ export class LoginService{
       if (success) {
         this.saveUserData(user);
       }
-    })
+    });
   }
 
   private saveUserData(user) {

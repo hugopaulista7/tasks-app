@@ -27,9 +27,9 @@ export class HttpsRequestInterceptor  implements HttpInterceptor {
 
   private async authenticationHeader(headers: HttpHeaders): Promise<any> {
     const token: string = await this.login.getUserApi();
-    // if (token) {
-    // }
-    headers = headers.set('Authorization', 'Bearer ' + environment.apiToken);
+    if (token) {
+      headers = headers.set('Authorization', 'Bearer ' + token);
+    }
     headers = headers.set('Content-Type', 'application/json');
 
     return headers;
